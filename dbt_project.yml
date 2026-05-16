@@ -1,0 +1,25 @@
+# Project configuration for dbt
+name: 'dbt_anji_family'
+version: '1.0.0'
+
+# Profile name must match the one in profiles.yml
+profile: 'dbt_anji_family'
+
+# Paths for different resource types
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Directories to be removed by `dbt clean`
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+models:
+  dbt_anji_family:
+    bronze:
+      +materialized: table

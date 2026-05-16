@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: source                  # must match first arg in source()
+    database: dbt_anji_dev        # Databricks catalog
+    schema: source                # Databricks schema
+    tables:
+      - name: fact_sales          # must match second arg in source()
+      - name: fact_returns
+      - name: dim_customer
+      - name: dim_product
+      - name: dim_store
+      - name: dim_date

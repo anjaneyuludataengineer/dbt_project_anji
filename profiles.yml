@@ -1,0 +1,37 @@
+anji_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: dbt_data_dev
+      schema: source
+      host: dbc-5aa30796-b3e7.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/da18a078bf082012
+      threads: 1
+      token: "{{ env_var('DATABRICKS_TOKEN') }}"   # use env var, not plain text
+
+dbt_anji_family:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: dbt_anji_dev
+      schema: source
+      host: dbc-5aa30796-b3e7.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/da18a078bf082012
+      threads: 1
+      token: "{{ env_var('DATABRICKS_TOKEN') }}" # use env var, not plain text
+
+dbt_core:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: data-eng-aj
+      dataset: dbt_dataset
+      location: US
+      priority: interactive
+      threads: 1
+      job_execution_timeout_seconds: 300
+      job_retries: 1
