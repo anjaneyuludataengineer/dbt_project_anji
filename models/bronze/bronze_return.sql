@@ -4,4 +4,4 @@
 
 select *
 from 
-{{ source('source', 'fact_returns') }}
+{{ source('source', 'fact_returns') }} 
