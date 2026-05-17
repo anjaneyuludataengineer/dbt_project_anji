@@ -1,1 +1,0 @@
-select 3*4 as result
