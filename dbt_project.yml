@@ -23,3 +23,7 @@ models:
   dbt_anji_family:
     bronze:
       +materialized: table
+    silver:
+      +materialized: table  
+    gold:
+      +materialized: table
