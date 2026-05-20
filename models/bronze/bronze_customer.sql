@@ -1,6 +1,9 @@
 
 
 {{ config(materialized='view') }}
+{{ config(
+    schema='bronze'
+) }}
 
 select *
 from 
